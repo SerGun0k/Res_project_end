@@ -117,7 +117,6 @@ class PricePredictionRead(BaseModel):
     predicted_3m: Optional[float]
     trend: Optional[str]
     recommendation: Optional[str]
-    recommendation_reason: Optional[str]
     target_price: Optional[float]
     price_gap_pct: Optional[float]
     confidence: Optional[float]
