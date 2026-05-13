@@ -204,3 +204,24 @@ def get_prediction_label(recommendation: str) -> str:
         "no_rush": "⚪ Можно не спешить — цена стабильна",
     }
     return labels.get(recommendation, "Нет данных")
+
+
+def build_recommendation_reason(
+    recommendation: str,
+    trend: str | None,
+    current_price: float | None,
+    target_price: float | None,
+    price_gap_pct: float | None,
+) -> str:
+    """Короткое объяснение, почему выдана рекомендация."""
+    if current_price is None or target_price is None:
+        return "Недостаточно данных для объяснения"
+
+    gap_text = f"текущая цена {current_price:.0f} ₽, целевая {target_price:.0f} ₽"
+    trend_text = f"тренд: {trend or 'unknown'}"
+
+    if recommendation == "buy_now":
+        return f"Покупать сейчас: {gap_text}; {trend_text}; отклонение {price_gap_pct:.2f}%."
+    if recommendation == "wait":
+        return f"Рекомендуется подождать: {gap_text}; {trend_text}; цена выше целевого уровня на {price_gap_pct:.2f}%."
+    return f"Можно не спешить: {gap_text}; {trend_text}; отклонение {price_gap_pct:.2f}%."
