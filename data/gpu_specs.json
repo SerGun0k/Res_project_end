@@ -1,0 +1,307 @@
+{
+  "gpu": [
+    {
+      "id": 1,
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 4060",
+      "memory_gb": 8,
+      "memory_type": "GDDR6",
+      "tdp_watts": 115,
+      "release_date": "2023-06-29"
+    },
+    {
+      "id": 2,
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 4070",
+      "memory_gb": 12,
+      "memory_type": "GDDR6X",
+      "tdp_watts": 200,
+      "release_date": "2023-04-13"
+    },
+    {
+      "id": 3,
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 4080",
+      "memory_gb": 16,
+      "memory_type": "GDDR6X",
+      "tdp_watts": 320,
+      "release_date": "2022-11-16"
+    },
+    {
+      "id": 7,
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 4090",
+      "memory_gb": 24,
+      "memory_type": "GDDR6X",
+      "tdp_watts": 450,
+      "release_date": "2022-10-12",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Asus_Strix_RTX_4090.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Asus_Strix_RTX_4090.jpg"
+    },
+    {
+      "id": 4,
+      "brand": "AMD",
+      "model": "Radeon RX 7600",
+      "memory_gb": 8,
+      "memory_type": "GDDR6",
+      "tdp_watts": 165,
+      "release_date": "2023-05-25"
+    },
+    {
+      "id": 5,
+      "brand": "AMD",
+      "model": "Radeon RX 7800 XT",
+      "memory_gb": 16,
+      "memory_type": "GDDR6",
+      "tdp_watts": 263,
+      "release_date": "2023-09-06"
+    },
+    {
+      "id": 8,
+      "brand": "AMD",
+      "model": "Radeon RX 7900 XTX",
+      "memory_gb": 24,
+      "memory_type": "GDDR6",
+      "tdp_watts": 355,
+      "release_date": "2022-12-13",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Sapphire_AMD_Radeon_RX_7900_XTX.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sapphire_AMD_Radeon_RX_7900_XTX.jpg"
+    },
+    {
+      "id": 6,
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 3060",
+      "memory_gb": 12,
+      "memory_type": "GDDR6",
+      "tdp_watts": 170,
+      "release_date": "2021-02-25"
+    }
+  ],
+  "cpu": [
+    {
+      "id": 101,
+      "brand": "Intel",
+      "model": "Core i5-13400F",
+      "cores": 10,
+      "threads": 16,
+      "base_clock_ghz": 2.5,
+      "boost_clock_ghz": 4.6,
+      "tdp_watts": 65,
+      "release_date": "2023-01-03"
+    },
+    {
+      "id": 102,
+      "brand": "AMD",
+      "model": "Ryzen 5 7600X",
+      "cores": 6,
+      "threads": 12,
+      "base_clock_ghz": 4.7,
+      "boost_clock_ghz": 5.3,
+      "tdp_watts": 105,
+      "release_date": "2022-09-27"
+    },
+    {
+      "id": 103,
+      "brand": "Intel",
+      "model": "Core i7-13700K",
+      "cores": 16,
+      "threads": 24,
+      "base_clock_ghz": 3.4,
+      "boost_clock_ghz": 5.4,
+      "tdp_watts": 125,
+      "release_date": "2022-10-20"
+    },
+    {
+      "id": 107,
+      "brand": "Intel",
+      "model": "Core i7-14700K",
+      "cores": 20,
+      "threads": 28,
+      "base_clock_ghz": 3.4,
+      "boost_clock_ghz": 5.6,
+      "tdp_watts": 125,
+      "release_date": "2023-10-17",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Intel_Core_i7-14700K_%28INVADERPC%29.png",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Intel_Core_i7-14700K_(INVADERPC).png"
+    },
+    {
+      "id": 104,
+      "brand": "AMD",
+      "model": "Ryzen 7 7800X3D",
+      "cores": 8,
+      "threads": 16,
+      "base_clock_ghz": 4.2,
+      "boost_clock_ghz": 5.0,
+      "tdp_watts": 120,
+      "release_date": "2023-04-06",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Ryzen_7_7800_X3D%2C_unlocked.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ryzen_7_7800_X3D,_unlocked.jpg"
+    },
+    {
+      "id": 105,
+      "brand": "Intel",
+      "model": "Core i9-13900K",
+      "cores": 24,
+      "threads": 32,
+      "base_clock_ghz": 3.0,
+      "boost_clock_ghz": 5.8,
+      "tdp_watts": 125,
+      "release_date": "2022-10-20"
+    },
+    {
+      "id": 106,
+      "brand": "AMD",
+      "model": "Ryzen 9 7950X",
+      "cores": 16,
+      "threads": 32,
+      "base_clock_ghz": 4.5,
+      "boost_clock_ghz": 5.7,
+      "tdp_watts": 170,
+      "release_date": "2022-11-10"
+    }
+  ],
+  "ram": [
+    {
+      "id": 201,
+      "brand": "Corsair",
+      "model": "Vengeance DDR5 32GB (2x16)",
+      "capacity_gb": 32,
+      "type": "DDR5",
+      "speed_mhz": 5600,
+      "release_date": "2022-08-15"
+    },
+    {
+      "id": 202,
+      "brand": "G.Skill",
+      "model": "Trident Z5 DDR5 32GB (2x16)",
+      "capacity_gb": 32,
+      "type": "DDR5",
+      "speed_mhz": 6000,
+      "release_date": "2022-09-20"
+    },
+    {
+      "id": 203,
+      "brand": "Kingston",
+      "model": "Fury Beast DDR5 16GB (2x8)",
+      "capacity_gb": 16,
+      "type": "DDR5",
+      "speed_mhz": 5200,
+      "release_date": "2022-06-10"
+    },
+    {
+      "id": 204,
+      "brand": "Corsair",
+      "model": "Vengeance LPX DDR4 32GB (2x16)",
+      "capacity_gb": 32,
+      "type": "DDR4",
+      "speed_mhz": 3200,
+      "release_date": "2019-03-15"
+    }
+  ],
+  "ssd": [
+    {
+      "id": 301,
+      "brand": "Samsung",
+      "model": "980 PRO 1TB NVMe",
+      "capacity_gb": 1000,
+      "interface": "NVMe PCIe 4.0",
+      "read_mbps": 7000,
+      "write_mbps": 5000,
+      "release_date": "2020-09-22"
+    },
+    {
+      "id": 302,
+      "brand": "WD",
+      "model": "Black SN850X 1TB NVMe",
+      "capacity_gb": 1000,
+      "interface": "NVMe PCIe 4.0",
+      "read_mbps": 7300,
+      "write_mbps": 6300,
+      "release_date": "2022-07-12"
+    },
+    {
+      "id": 303,
+      "brand": "Crucial",
+      "model": "P3 Plus 500GB NVMe",
+      "capacity_gb": 500,
+      "interface": "NVMe PCIe 4.0",
+      "read_mbps": 4700,
+      "write_mbps": 1900,
+      "release_date": "2022-05-18"
+    },
+    {
+      "id": 304,
+      "brand": "Samsung",
+      "model": "870 EVO 1TB SATA",
+      "capacity_gb": 1000,
+      "interface": "SATA III",
+      "read_mbps": 560,
+      "write_mbps": 530,
+      "release_date": "2021-01-20"
+    }
+  ],
+  "hdd": [
+    {
+      "id": 401,
+      "brand": "Seagate",
+      "model": "Barracuda 2TB",
+      "capacity_gb": 2000,
+      "rpm": 7200,
+      "cache_mb": 256,
+      "interface": "SATA III",
+      "release_date": "2020-06-15"
+    },
+    {
+      "id": 402,
+      "brand": "WD",
+      "model": "Blue 1TB",
+      "capacity_gb": 1000,
+      "rpm": 7200,
+      "cache_mb": 64,
+      "interface": "SATA III",
+      "release_date": "2019-11-10"
+    },
+    {
+      "id": 403,
+      "brand": "Seagate",
+      "model": "IronWolf 4TB NAS",
+      "capacity_gb": 4000,
+      "rpm": 5900,
+      "cache_mb": 256,
+      "interface": "SATA III",
+      "release_date": "2021-03-20"
+    }
+  ],
+  "m2": [
+    {
+      "id": 501,
+      "brand": "Samsung",
+      "model": "990 PRO 2TB M.2",
+      "capacity_gb": 2000,
+      "interface": "NVMe PCIe 4.0",
+      "read_mbps": 7450,
+      "write_mbps": 6900,
+      "release_date": "2022-10-01"
+    },
+    {
+      "id": 502,
+      "brand": "WD",
+      "model": "Black SN850X 2TB M.2",
+      "capacity_gb": 2000,
+      "interface": "NVMe PCIe 4.0",
+      "read_mbps": 7300,
+      "write_mbps": 6600,
+      "release_date": "2022-07-12"
+    },
+    {
+      "id": 503,
+      "brand": "Kingston",
+      "model": "KC3000 1TB M.2",
+      "capacity_gb": 1000,
+      "interface": "NVMe PCIe 4.0",
+      "read_mbps": 7000,
+      "write_mbps": 6000,
+      "release_date": "2022-02-14"
+    }
+  ]
+}

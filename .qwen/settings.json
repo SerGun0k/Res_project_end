@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(C:\\Users\\Антон\\.qwen/**)",
+      "Bash(uvx *)",
+      "Bash(mkdir *)",
+      "Bash(new-item *)",
+      "Bash(true)",
+      "Bash(get-childitem *)",
+      "Bash(select-object *)",
+      "Bash(rm *)",
+      "Bash(timeout *)",
+      "Bash(echo.)",
+      "Bash(taskkill *)",
+      "Bash(netstat *)",
+      "Bash(findstr *)",
+      "Bash(docker-compose *)",
+      "Bash(sleep *)",
+      "Bash(python *)",
+      "Bash(chcp *)",
+      "Bash(npx *)",
+      "Bash(docker logs *)",
+      "Bash(docker exec *)"
+    ]
+  },
+  "$version": 3
+}

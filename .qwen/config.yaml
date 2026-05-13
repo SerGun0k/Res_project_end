@@ -1,0 +1,28 @@
+tools:
+  - type: function
+    function:
+      name: search_market_prices
+      description: "Получает цены из открытых источников через fetch-MCP"
+      parameters:
+        type: object
+        properties:
+          url: {type: string, description: "API endpoint или страница товара"}
+        required: [url]
+  - type: function
+    function:
+      name: query_cost_data
+      description: "Запрашивает расчётную себестоимость из PostgreSQL"
+      parameters:
+        type: object
+        properties:
+          product_id: {type: integer}
+        required: [product_id]
+  - type: function
+    function:
+      name: read_local_specs
+      description: "Читает локальные JSON-спецификации комплектующих"
+      parameters:
+        type: object
+        properties:
+          path: {type: string, description: "Путь к файлу в разрешённой директории"}
+        required: [path]

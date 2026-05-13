@@ -1,0 +1,2319 @@
+{
+  "GPU": [
+    {
+      "brand": "NVIDIA",
+      "model": "RTX 3080",
+      "specs": {
+        "memory_gb": 10,
+        "memory_type": "",
+        "tdp_watts": 320,
+        "release_date": "2020-01-01"
+      },
+      "release_date": "2020-01-01",
+      "category": "GPU"
+    },
+    {
+      "brand": "NVIDIA",
+      "model": "RTX 3080 TI",
+      "specs": {
+        "memory_gb": 12,
+        "memory_type": "",
+        "tdp_watts": 350,
+        "release_date": "2020-01-01"
+      },
+      "release_date": "2020-01-01",
+      "category": "GPU"
+    },
+    {
+      "brand": "NVIDIA",
+      "model": "RTX 3090",
+      "specs": {
+        "memory_gb": 24,
+        "memory_type": "",
+        "tdp_watts": 350,
+        "release_date": "2020-01-01"
+      },
+      "release_date": "2020-01-01",
+      "category": "GPU"
+    },
+    {
+      "brand": "NVIDIA",
+      "model": "RTX 4090",
+      "specs": {
+        "memory_gb": 24,
+        "memory_type": "",
+        "tdp_watts": 450,
+        "release_date": "2022-01-01"
+      },
+      "release_date": "2022-01-01",
+      "category": "GPU"
+    },
+    {
+      "category": "GPU",
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 4090",
+      "specs": {
+        "memory_gb": 24,
+        "memory_type": "GDDR6X",
+        "tdp_watts": 450,
+        "release_date": "2022-10-12"
+      },
+      "release_date": "2022-10-12"
+    },
+    {
+      "category": "GPU",
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 4080",
+      "specs": {
+        "memory_gb": 16,
+        "memory_type": "GDDR6X",
+        "tdp_watts": 320,
+        "release_date": "2022-11-16"
+      },
+      "release_date": "2022-11-16"
+    },
+    {
+      "category": "GPU",
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 4070 Ti",
+      "specs": {
+        "memory_gb": 12,
+        "memory_type": "GDDR6X",
+        "tdp_watts": 285,
+        "release_date": "2023-01-05"
+      },
+      "release_date": "2023-01-05"
+    },
+    {
+      "category": "GPU",
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 4070",
+      "specs": {
+        "memory_gb": 12,
+        "memory_type": "GDDR6X",
+        "tdp_watts": 200,
+        "release_date": "2023-04-13"
+      },
+      "release_date": "2023-04-13"
+    },
+    {
+      "category": "GPU",
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 4060 Ti",
+      "specs": {
+        "memory_gb": 8,
+        "memory_type": "GDDR6",
+        "tdp_watts": 160,
+        "release_date": "2023-05-24"
+      },
+      "release_date": "2023-05-24"
+    },
+    {
+      "category": "GPU",
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 4060",
+      "specs": {
+        "memory_gb": 8,
+        "memory_type": "GDDR6",
+        "tdp_watts": 115,
+        "release_date": "2023-06-29"
+      },
+      "release_date": "2023-06-29"
+    },
+    {
+      "category": "GPU",
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 3080",
+      "specs": {
+        "memory_gb": 10,
+        "memory_type": "GDDR6X",
+        "tdp_watts": 320,
+        "release_date": "2020-09-17"
+      },
+      "release_date": "2020-09-17"
+    },
+    {
+      "category": "GPU",
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 3070",
+      "specs": {
+        "memory_gb": 8,
+        "memory_type": "GDDR6",
+        "tdp_watts": 220,
+        "release_date": "2020-10-29"
+      },
+      "release_date": "2020-10-29"
+    },
+    {
+      "category": "GPU",
+      "brand": "NVIDIA",
+      "model": "GeForce RTX 3060",
+      "specs": {
+        "memory_gb": 12,
+        "memory_type": "GDDR6",
+        "tdp_watts": 170,
+        "release_date": "2021-02-25"
+      },
+      "release_date": "2021-02-25"
+    },
+    {
+      "category": "GPU",
+      "brand": "AMD",
+      "model": "Radeon RX 7900 XTX",
+      "specs": {
+        "memory_gb": 24,
+        "memory_type": "GDDR6",
+        "tdp_watts": 355,
+        "release_date": "2022-12-13"
+      },
+      "release_date": "2022-12-13"
+    },
+    {
+      "category": "GPU",
+      "brand": "AMD",
+      "model": "Radeon RX 7900 XT",
+      "specs": {
+        "memory_gb": 20,
+        "memory_type": "GDDR6",
+        "tdp_watts": 315,
+        "release_date": "2022-12-13"
+      },
+      "release_date": "2022-12-13"
+    },
+    {
+      "category": "GPU",
+      "brand": "AMD",
+      "model": "Radeon RX 7800 XT",
+      "specs": {
+        "memory_gb": 16,
+        "memory_type": "GDDR6",
+        "tdp_watts": 263,
+        "release_date": "2023-09-06"
+      },
+      "release_date": "2023-09-06"
+    },
+    {
+      "category": "GPU",
+      "brand": "AMD",
+      "model": "Radeon RX 7600",
+      "specs": {
+        "memory_gb": 8,
+        "memory_type": "GDDR6",
+        "tdp_watts": 165,
+        "release_date": "2023-05-25"
+      },
+      "release_date": "2023-05-25"
+    },
+    {
+      "category": "GPU",
+      "brand": "AMD",
+      "model": "Radeon RX 6800 XT",
+      "specs": {
+        "memory_gb": 16,
+        "memory_type": "GDDR6",
+        "tdp_watts": 300,
+        "release_date": "2020-11-18"
+      },
+      "release_date": "2020-11-18"
+    },
+    {
+      "category": "GPU",
+      "brand": "AMD",
+      "model": "Radeon RX 6700 XT",
+      "specs": {
+        "memory_gb": 12,
+        "memory_type": "GDDR6",
+        "tdp_watts": 230,
+        "release_date": "2021-03-18"
+      },
+      "release_date": "2021-03-18"
+    },
+    {
+      "category": "GPU",
+      "brand": "Intel",
+      "model": "Arc A770 16GB",
+      "specs": {
+        "memory_gb": 16,
+        "memory_type": "GDDR6",
+        "tdp_watts": 225,
+        "release_date": "2022-10-12"
+      },
+      "release_date": "2022-10-12"
+    },
+    {
+      "category": "GPU",
+      "brand": "Intel",
+      "model": "Arc A750",
+      "specs": {
+        "memory_gb": 8,
+        "memory_type": "GDDR6",
+        "tdp_watts": 225,
+        "release_date": "2022-10-12"
+      },
+      "release_date": "2022-10-12"
+    },
+    {
+      "category": "GPU",
+      "brand": "Intel",
+      "model": "Arc A580",
+      "specs": {
+        "memory_gb": 8,
+        "memory_type": "GDDR6",
+        "tdp_watts": 185,
+        "release_date": "2023-10-12"
+      },
+      "release_date": "2023-10-12"
+    }
+  ],
+  "CPU": [
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 7 7840H",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 3.8,
+        "boost_clock_ghz": 5.1,
+        "tdp_watts": 54,
+        "socket": "FP7 FP7r2 FP8",
+        "release_date": "Q3 2023"
+      },
+      "release_date": "Q3 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 9 PRO 7940HS",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 4.0,
+        "boost_clock_ghz": 5.2,
+        "tdp_watts": 45,
+        "socket": "FP7 FP7r2",
+        "release_date": "Q3 2023"
+      },
+      "release_date": "Q3 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD A8-7690K",
+      "specs": {
+        "cores": 4,
+        "threads": null,
+        "base_clock_ghz": 3.7,
+        "boost_clock_ghz": null,
+        "tdp_watts": 95,
+        "socket": "FM2+",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Athlon Gold 7220U",
+      "specs": {
+        "cores": 2,
+        "threads": 4,
+        "base_clock_ghz": 2.4,
+        "boost_clock_ghz": 3.7,
+        "tdp_watts": 15,
+        "socket": "",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Athlon Silver 7120U",
+      "specs": {
+        "cores": 2,
+        "threads": 2,
+        "base_clock_ghz": 2.4,
+        "boost_clock_ghz": 3.5,
+        "tdp_watts": 15,
+        "socket": "FP6",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Athlon X4 850",
+      "specs": {
+        "cores": 4,
+        "threads": null,
+        "base_clock_ghz": 3.2,
+        "boost_clock_ghz": 3.9,
+        "tdp_watts": 65,
+        "socket": "FM2+",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD EPYC 3451",
+      "specs": {
+        "cores": 16,
+        "threads": 32,
+        "base_clock_ghz": 2.1,
+        "boost_clock_ghz": 3.0,
+        "tdp_watts": null,
+        "socket": "",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD EPYC 9124",
+      "specs": {
+        "cores": 16,
+        "threads": 32,
+        "base_clock_ghz": 3.0,
+        "boost_clock_ghz": 3.7,
+        "tdp_watts": 200,
+        "socket": "SP5",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD EPYC 9174F",
+      "specs": {
+        "cores": 16,
+        "threads": 32,
+        "base_clock_ghz": 4.1,
+        "boost_clock_ghz": 4.4,
+        "tdp_watts": 320,
+        "socket": "SP5",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD EPYC 9254",
+      "specs": {
+        "cores": 24,
+        "threads": 48,
+        "base_clock_ghz": 2.9,
+        "boost_clock_ghz": 4.2,
+        "tdp_watts": 200,
+        "socket": "SP5",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD EPYC 9274F",
+      "specs": {
+        "cores": 24,
+        "threads": 48,
+        "base_clock_ghz": 4.1,
+        "boost_clock_ghz": 4.3,
+        "tdp_watts": null,
+        "socket": "SP5",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD EPYC 9474F",
+      "specs": {
+        "cores": 48,
+        "threads": 96,
+        "base_clock_ghz": 3.6,
+        "boost_clock_ghz": 4.1,
+        "tdp_watts": 360,
+        "socket": "SP5",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD EPYC 9534",
+      "specs": {
+        "cores": 64,
+        "threads": 128,
+        "base_clock_ghz": 2.5,
+        "boost_clock_ghz": 3.7,
+        "tdp_watts": 280,
+        "socket": "SP5",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Opteron 4174 HE",
+      "specs": {
+        "cores": 6,
+        "threads": 6,
+        "base_clock_ghz": 2.3,
+        "boost_clock_ghz": null,
+        "tdp_watts": 65,
+        "socket": "C32",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 3 PRO 4355GE",
+      "specs": {
+        "cores": 4,
+        "threads": 8,
+        "base_clock_ghz": 3.5,
+        "boost_clock_ghz": 4.0,
+        "tdp_watts": 35,
+        "socket": "AM4",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 5 4400G",
+      "specs": {
+        "cores": 6,
+        "threads": 12,
+        "base_clock_ghz": 3.7,
+        "boost_clock_ghz": 4.3,
+        "tdp_watts": 65,
+        "socket": "AM4",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 5 7535HS",
+      "specs": {
+        "cores": 6,
+        "threads": 12,
+        "base_clock_ghz": 3.3,
+        "boost_clock_ghz": 4.6,
+        "tdp_watts": 35,
+        "socket": "FP7",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 5 7535U",
+      "specs": {
+        "cores": 6,
+        "threads": 12,
+        "base_clock_ghz": 2.9,
+        "boost_clock_ghz": 4.6,
+        "tdp_watts": 28,
+        "socket": "FP7",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 5 7540U",
+      "specs": {
+        "cores": 6,
+        "threads": 12,
+        "base_clock_ghz": 3.2,
+        "boost_clock_ghz": 4.9,
+        "tdp_watts": 28,
+        "socket": "FP7 FP7r2",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 5 PRO 4655G",
+      "specs": {
+        "cores": 6,
+        "threads": 12,
+        "base_clock_ghz": 3.7,
+        "boost_clock_ghz": 4.2,
+        "tdp_watts": 65,
+        "socket": "AM4",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 5 PRO 7530U",
+      "specs": {
+        "cores": 6,
+        "threads": 12,
+        "base_clock_ghz": 2.0,
+        "boost_clock_ghz": 4.5,
+        "tdp_watts": 15,
+        "socket": "FP6",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 7 7735U",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 2.7,
+        "boost_clock_ghz": 4.8,
+        "tdp_watts": 28,
+        "socket": "FP7",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 7 7745HX",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 3.6,
+        "boost_clock_ghz": 5.1,
+        "tdp_watts": 55,
+        "socket": "AM5 (LGA 1718)",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 7 7800X3D",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 4.2,
+        "boost_clock_ghz": 5.0,
+        "tdp_watts": 120,
+        "socket": "AM5",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 7 PRO 7840HS",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 3.8,
+        "boost_clock_ghz": 5.1,
+        "tdp_watts": 54,
+        "socket": "FP7 FP7r2 FP8",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 9 7940H",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 4.0,
+        "boost_clock_ghz": 5.2,
+        "tdp_watts": 54,
+        "socket": "FP7 FP7r2 FP8",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 9 7940HS",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 4.0,
+        "boost_clock_ghz": 5.2,
+        "tdp_watts": 54,
+        "socket": "FP7 FP7r2 FP8",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen Z1 Extreme",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 3.3,
+        "boost_clock_ghz": 5.1,
+        "tdp_watts": 9,
+        "socket": "",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Atom x6214RE @ 1.40GHz",
+      "specs": {
+        "cores": 2,
+        "threads": 2,
+        "base_clock_ghz": 1.4,
+        "boost_clock_ghz": null,
+        "tdp_watts": 6,
+        "socket": "FCBGA1493",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Atom x6414RE @ 1.50GHz",
+      "specs": {
+        "cores": 4,
+        "threads": 4,
+        "base_clock_ghz": 1.5,
+        "boost_clock_ghz": null,
+        "tdp_watts": 9,
+        "socket": "FCBGA1493",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Celeron 6600HE @ 2.60GHz",
+      "specs": {
+        "cores": 2,
+        "threads": 2,
+        "base_clock_ghz": 2.6,
+        "boost_clock_ghz": null,
+        "tdp_watts": 35,
+        "socket": "FCBGA1787",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i3-1305U",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 15,
+        "socket": "FCBGA1744",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i3-13100T",
+      "specs": {
+        "cores": 4,
+        "threads": 8,
+        "base_clock_ghz": 2.5,
+        "boost_clock_ghz": 4.2,
+        "tdp_watts": 69,
+        "socket": "FCLGA1700",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i3-1315U",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 15,
+        "socket": "FCBGA1744",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-1250PE",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 28,
+        "socket": "FCBGA1744",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-12600HE",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 65,
+        "socket": "BGA 1744",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-1334U",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 15,
+        "socket": "FCBGA1744",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-1335U",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 15,
+        "socket": "FCBGA1744",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-13400T",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 35,
+        "socket": "FCLGA1700",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-13420H",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 45,
+        "socket": "FCBGA1744",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-13450HX",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 55,
+        "socket": "FCBGA1964",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-13490F",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 65,
+        "socket": "FCLGA1700",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-13500HX",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 55,
+        "socket": "FCBGA1964",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-1350P",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 28,
+        "socket": "FCBGA1744",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-13600H",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 45,
+        "socket": "FCBGA1744",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-13600HX",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 55,
+        "socket": "FCBGA1964",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i7-1355U",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 15,
+        "socket": "FCBGA1744",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i7-13705H",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 45,
+        "socket": "FCBGA1792",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i9-13900HK",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 45,
+        "socket": "FCBGA1744",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i9-13905H",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 45,
+        "socket": "FCBGA1792",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel N97",
+      "specs": {
+        "cores": 4,
+        "threads": 4,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": 3.6,
+        "tdp_watts": 12,
+        "socket": "FCBGA1264",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon Gold 5416S",
+      "specs": {
+        "cores": 16,
+        "threads": 32,
+        "base_clock_ghz": 2.0,
+        "boost_clock_ghz": 4.0,
+        "tdp_watts": 150,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon Gold 5420+",
+      "specs": {
+        "cores": 28,
+        "threads": 56,
+        "base_clock_ghz": 2.0,
+        "boost_clock_ghz": 4.1,
+        "tdp_watts": 205,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon Gold 6414U",
+      "specs": {
+        "cores": 32,
+        "threads": 64,
+        "base_clock_ghz": 2.0,
+        "boost_clock_ghz": 3.4,
+        "tdp_watts": 250,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon Silver 4410T",
+      "specs": {
+        "cores": 10,
+        "threads": 20,
+        "base_clock_ghz": 2.7,
+        "boost_clock_ghz": 4.0,
+        "tdp_watts": 150,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon Silver 4410Y",
+      "specs": {
+        "cores": 12,
+        "threads": 24,
+        "base_clock_ghz": 2.0,
+        "boost_clock_ghz": 3.9,
+        "tdp_watts": 150,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon W-11555MRE @ 2.60GHz",
+      "specs": {
+        "cores": 6,
+        "threads": 12,
+        "base_clock_ghz": 2.6,
+        "boost_clock_ghz": 4.5,
+        "tdp_watts": 45,
+        "socket": "FCBGA1787",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon W-3275 @ 2.50GHz",
+      "specs": {
+        "cores": 28,
+        "threads": 56,
+        "base_clock_ghz": 2.5,
+        "boost_clock_ghz": 4.6,
+        "tdp_watts": 205,
+        "socket": "FCLGA3647",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon w3-2423",
+      "specs": {
+        "cores": 6,
+        "threads": 12,
+        "base_clock_ghz": 2.1,
+        "boost_clock_ghz": 4.2,
+        "tdp_watts": 120,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon w3-2435",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 3.1,
+        "boost_clock_ghz": 4.5,
+        "tdp_watts": 165,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon w5-2445",
+      "specs": {
+        "cores": 10,
+        "threads": 20,
+        "base_clock_ghz": 3.1,
+        "boost_clock_ghz": 4.6,
+        "tdp_watts": 175,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon w5-2465X",
+      "specs": {
+        "cores": 16,
+        "threads": 32,
+        "base_clock_ghz": 3.1,
+        "boost_clock_ghz": 4.7,
+        "tdp_watts": 200,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon w5-3435X",
+      "specs": {
+        "cores": 16,
+        "threads": 32,
+        "base_clock_ghz": 3.1,
+        "boost_clock_ghz": 4.7,
+        "tdp_watts": 324,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon w7-2495X",
+      "specs": {
+        "cores": 24,
+        "threads": 48,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": 4.8,
+        "tdp_watts": 225,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon w7-3465X",
+      "specs": {
+        "cores": 28,
+        "threads": 56,
+        "base_clock_ghz": 2.5,
+        "boost_clock_ghz": 4.8,
+        "tdp_watts": 300,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon w9-3475X",
+      "specs": {
+        "cores": 36,
+        "threads": 72,
+        "base_clock_ghz": 2.2,
+        "boost_clock_ghz": 4.8,
+        "tdp_watts": 300,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Xeon w9-3495X",
+      "specs": {
+        "cores": 56,
+        "threads": 112,
+        "base_clock_ghz": 1.9,
+        "boost_clock_ghz": 4.8,
+        "tdp_watts": 350,
+        "socket": "FCLGA4677",
+        "release_date": "Q2 2023"
+      },
+      "release_date": "Q2 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Athlon PRO 300U",
+      "specs": {
+        "cores": 2,
+        "threads": 4,
+        "base_clock_ghz": 2.4,
+        "boost_clock_ghz": 3.3,
+        "tdp_watts": 15,
+        "socket": "FP5",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Athlon PRO 3045B",
+      "specs": {
+        "cores": 2,
+        "threads": 2,
+        "base_clock_ghz": 2.3,
+        "boost_clock_ghz": 3.2,
+        "tdp_watts": 15,
+        "socket": "FP5",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD EPYC 3151",
+      "specs": {
+        "cores": 4,
+        "threads": 8,
+        "base_clock_ghz": 2.7,
+        "boost_clock_ghz": 2.9,
+        "tdp_watts": 45,
+        "socket": "",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD EPYC 7R12",
+      "specs": {
+        "cores": 48,
+        "threads": 96,
+        "base_clock_ghz": 2.2,
+        "boost_clock_ghz": 3.3,
+        "tdp_watts": 200,
+        "socket": "SP3",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD EPYC 9354P",
+      "specs": {
+        "cores": 32,
+        "threads": 64,
+        "base_clock_ghz": 3.3,
+        "boost_clock_ghz": 3.8,
+        "tdp_watts": 280,
+        "socket": "SP5",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD GX-416RA SOC",
+      "specs": {
+        "cores": 4,
+        "threads": 4,
+        "base_clock_ghz": 1.6,
+        "boost_clock_ghz": null,
+        "tdp_watts": null,
+        "socket": "FT3",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 3 7320U",
+      "specs": {
+        "cores": 4,
+        "threads": 8,
+        "base_clock_ghz": 2.4,
+        "boost_clock_ghz": 4.1,
+        "tdp_watts": 15,
+        "socket": "FP7",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 3 7330U",
+      "specs": {
+        "cores": 4,
+        "threads": 8,
+        "base_clock_ghz": 2.3,
+        "boost_clock_ghz": 4.3,
+        "tdp_watts": 15,
+        "socket": "FP6",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 3 PRO 7330U",
+      "specs": {
+        "cores": 4,
+        "threads": 8,
+        "base_clock_ghz": 2.3,
+        "boost_clock_ghz": 4.3,
+        "tdp_watts": 15,
+        "socket": "FP6",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 5 7520U",
+      "specs": {
+        "cores": 4,
+        "threads": 8,
+        "base_clock_ghz": 2.8,
+        "boost_clock_ghz": 4.3,
+        "tdp_watts": 15,
+        "socket": "FP6",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 5 7600",
+      "specs": {
+        "cores": 6,
+        "threads": 12,
+        "base_clock_ghz": 3.8,
+        "boost_clock_ghz": 5.1,
+        "tdp_watts": 65,
+        "socket": "AM5 (LGA 1718)",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 7 7700",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 3.8,
+        "boost_clock_ghz": 5.3,
+        "tdp_watts": 65,
+        "socket": "AM5",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 7 7730U",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 2.0,
+        "boost_clock_ghz": 4.5,
+        "tdp_watts": 15,
+        "socket": "FP6",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 7 7735H",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 3.2,
+        "boost_clock_ghz": 4.8,
+        "tdp_watts": 54,
+        "socket": "FP7",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 7 7735HS",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 3.2,
+        "boost_clock_ghz": 4.8,
+        "tdp_watts": 54,
+        "socket": "FP7",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 7 7736U",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 2.7,
+        "boost_clock_ghz": 4.7,
+        "tdp_watts": 28,
+        "socket": "FP7",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 7 7840HS",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "base_clock_ghz": 3.8,
+        "boost_clock_ghz": 5.1,
+        "tdp_watts": 54,
+        "socket": "FP7 FP7r2 FP8",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 9 7845HX",
+      "specs": {
+        "cores": 12,
+        "threads": 24,
+        "base_clock_ghz": 3.0,
+        "boost_clock_ghz": 5.2,
+        "tdp_watts": 55,
+        "socket": "FL1",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 9 7900",
+      "specs": {
+        "cores": 12,
+        "threads": 24,
+        "base_clock_ghz": 3.7,
+        "boost_clock_ghz": 5.4,
+        "tdp_watts": 65,
+        "socket": "AM5",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 9 7900X3D",
+      "specs": {
+        "cores": 12,
+        "threads": 24,
+        "base_clock_ghz": 4.4,
+        "boost_clock_ghz": 5.6,
+        "tdp_watts": 120,
+        "socket": "AM5 (LGA 1718)",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 9 7945HX",
+      "specs": {
+        "cores": 16,
+        "threads": 32,
+        "base_clock_ghz": 2.5,
+        "boost_clock_ghz": 5.4,
+        "tdp_watts": 55,
+        "socket": "FL1",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "AMD",
+      "model": "AMD Ryzen 9 7950X3D",
+      "specs": {
+        "cores": 16,
+        "threads": 32,
+        "base_clock_ghz": 4.2,
+        "boost_clock_ghz": 5.7,
+        "tdp_watts": 120,
+        "socket": "AM5",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i3-13100",
+      "specs": {
+        "cores": 4,
+        "threads": 8,
+        "base_clock_ghz": 3.4,
+        "boost_clock_ghz": 4.5,
+        "tdp_watts": 60,
+        "socket": "FCLGA1700",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i3-13100F",
+      "specs": {
+        "cores": 4,
+        "threads": 8,
+        "base_clock_ghz": 3.4,
+        "boost_clock_ghz": 4.5,
+        "tdp_watts": 58,
+        "socket": "FCLGA1700",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i3-6167U @ 2.70GHz",
+      "specs": {
+        "cores": 2,
+        "threads": 4,
+        "base_clock_ghz": 2.7,
+        "boost_clock_ghz": null,
+        "tdp_watts": 28,
+        "socket": "FCBGA1356",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i3-N305",
+      "specs": {
+        "cores": 8,
+        "threads": 8,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": 3.8,
+        "tdp_watts": 15,
+        "socket": "FCBGA1264",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-12500E",
+      "specs": {
+        "cores": 6,
+        "threads": 12,
+        "base_clock_ghz": 2.9,
+        "boost_clock_ghz": 4.5,
+        "tdp_watts": 65,
+        "socket": "FCLGA1700",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-13400F",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 65,
+        "socket": "FCLGA1700",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-1340P",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 28,
+        "socket": "FCBGA1744",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-1345U",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 15,
+        "socket": "FCBGA1744",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-13500H",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 45,
+        "socket": "",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-13500T",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 92,
+        "socket": "FCLGA1700",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    },
+    {
+      "brand": "Intel",
+      "model": "Intel Core i5-13600",
+      "specs": {
+        "cores": null,
+        "threads": null,
+        "base_clock_ghz": null,
+        "boost_clock_ghz": null,
+        "tdp_watts": 65,
+        "socket": "FCLGA1700",
+        "release_date": "Q1 2023"
+      },
+      "release_date": "Q1 2023",
+      "category": "CPU"
+    }
+  ],
+  "RAM": [
+    {
+      "category": "RAM",
+      "brand": "Corsair",
+      "model": "Vengeance DDR5 32GB (2x16) 5600MHz",
+      "specs": {
+        "capacity_gb": 32,
+        "type": "DDR5",
+        "speed_mhz": 5600,
+        "release_date": "2022-08-15"
+      },
+      "release_date": "2022-08-15"
+    },
+    {
+      "category": "RAM",
+      "brand": "G.Skill",
+      "model": "Trident Z5 DDR5 32GB (2x16) 6000MHz",
+      "specs": {
+        "capacity_gb": 32,
+        "type": "DDR5",
+        "speed_mhz": 6000,
+        "release_date": "2022-09-20"
+      },
+      "release_date": "2022-09-20"
+    },
+    {
+      "category": "RAM",
+      "brand": "Kingston",
+      "model": "Fury Beast DDR5 16GB (2x8) 5200MHz",
+      "specs": {
+        "capacity_gb": 16,
+        "type": "DDR5",
+        "speed_mhz": 5200,
+        "release_date": "2022-06-10"
+      },
+      "release_date": "2022-06-10"
+    },
+    {
+      "category": "RAM",
+      "brand": "Corsair",
+      "model": "Vengeance LPX DDR4 32GB (2x16) 3200MHz",
+      "specs": {
+        "capacity_gb": 32,
+        "type": "DDR4",
+        "speed_mhz": 3200,
+        "release_date": "2019-03-15"
+      },
+      "release_date": "2019-03-15"
+    },
+    {
+      "category": "RAM",
+      "brand": "G.Skill",
+      "model": "Ripjaws V DDR4 16GB (2x8) 3600MHz",
+      "specs": {
+        "capacity_gb": 16,
+        "type": "DDR4",
+        "speed_mhz": 3600,
+        "release_date": "2020-06-01"
+      },
+      "release_date": "2020-06-01"
+    },
+    {
+      "category": "RAM",
+      "brand": "TeamGroup",
+      "model": "T-Force Delta DDR5 32GB (2x16) 6400MHz",
+      "specs": {
+        "capacity_gb": 32,
+        "type": "DDR5",
+        "speed_mhz": 6400,
+        "release_date": "2023-01-01"
+      },
+      "release_date": "2023-01-01"
+    },
+    {
+      "category": "RAM",
+      "brand": "Crucial",
+      "model": "Ballistix DDR4 32GB (2x16) 3600MHz",
+      "specs": {
+        "capacity_gb": 32,
+        "type": "DDR4",
+        "speed_mhz": 3600,
+        "release_date": "2021-04-01"
+      },
+      "release_date": "2021-04-01"
+    },
+    {
+      "category": "RAM",
+      "brand": "ADATA",
+      "model": "XPG Spectrix DDR5 32GB (2x16) 6000MHz",
+      "specs": {
+        "capacity_gb": 32,
+        "type": "DDR5",
+        "speed_mhz": 6000,
+        "release_date": "2023-03-01"
+      },
+      "release_date": "2023-03-01"
+    }
+  ],
+  "SSD": [
+    {
+      "category": "SSD",
+      "brand": "Samsung",
+      "model": "980 PRO 1TB NVMe",
+      "specs": {
+        "capacity_gb": 1000,
+        "interface": "NVMe PCIe 4.0",
+        "read_mbps": 7000,
+        "write_mbps": 5000,
+        "release_date": "2020-09-22"
+      },
+      "release_date": "2020-09-22"
+    },
+    {
+      "category": "SSD",
+      "brand": "WD",
+      "model": "Black SN850X 1TB NVMe",
+      "specs": {
+        "capacity_gb": 1000,
+        "interface": "NVMe PCIe 4.0",
+        "read_mbps": 7300,
+        "write_mbps": 6300,
+        "release_date": "2022-07-12"
+      },
+      "release_date": "2022-07-12"
+    },
+    {
+      "category": "SSD",
+      "brand": "Crucial",
+      "model": "P3 Plus 500GB NVMe",
+      "specs": {
+        "capacity_gb": 500,
+        "interface": "NVMe PCIe 4.0",
+        "read_mbps": 4700,
+        "write_mbps": 1900,
+        "release_date": "2022-05-18"
+      },
+      "release_date": "2022-05-18"
+    },
+    {
+      "category": "SSD",
+      "brand": "Samsung",
+      "model": "870 EVO 1TB SATA",
+      "specs": {
+        "capacity_gb": 1000,
+        "interface": "SATA III",
+        "read_mbps": 560,
+        "write_mbps": 530,
+        "release_date": "2021-01-20"
+      },
+      "release_date": "2021-01-20"
+    },
+    {
+      "category": "SSD",
+      "brand": "Kingston",
+      "model": "NV2 1TB NVMe",
+      "specs": {
+        "capacity_gb": 1000,
+        "interface": "NVMe PCIe 4.0",
+        "read_mbps": 3500,
+        "write_mbps": 2100,
+        "release_date": "2022-08-01"
+      },
+      "release_date": "2022-08-01"
+    },
+    {
+      "category": "SSD",
+      "brand": "Samsung",
+      "model": "970 EVO Plus 2TB NVMe",
+      "specs": {
+        "capacity_gb": 2000,
+        "interface": "NVMe PCIe 3.0",
+        "read_mbps": 3500,
+        "write_mbps": 3300,
+        "release_date": "2021-01-01"
+      },
+      "release_date": "2021-01-01"
+    },
+    {
+      "category": "SSD",
+      "brand": "Seagate",
+      "model": "FireCuda 530 1TB NVMe",
+      "specs": {
+        "capacity_gb": 1000,
+        "interface": "NVMe PCIe 4.0",
+        "read_mbps": 7300,
+        "write_mbps": 6000,
+        "release_date": "2021-08-01"
+      },
+      "release_date": "2021-08-01"
+    },
+    {
+      "category": "SSD",
+      "brand": "SK Hynix",
+      "model": "Platinum P41 2TB NVMe",
+      "specs": {
+        "capacity_gb": 2000,
+        "interface": "NVMe PCIe 4.0",
+        "read_mbps": 7000,
+        "write_mbps": 6500,
+        "release_date": "2022-08-01"
+      },
+      "release_date": "2022-08-01"
+    }
+  ],
+  "HDD": [
+    {
+      "category": "HDD",
+      "brand": "Seagate",
+      "model": "Barracuda 2TB 7200RPM",
+      "specs": {
+        "capacity_gb": 2000,
+        "rpm": 7200,
+        "cache_mb": 256,
+        "interface": "SATA III",
+        "release_date": "2020-06-15"
+      },
+      "release_date": "2020-06-15"
+    },
+    {
+      "category": "HDD",
+      "brand": "WD",
+      "model": "Blue 1TB 7200RPM",
+      "specs": {
+        "capacity_gb": 1000,
+        "rpm": 7200,
+        "cache_mb": 64,
+        "interface": "SATA III",
+        "release_date": "2019-11-10"
+      },
+      "release_date": "2019-11-10"
+    },
+    {
+      "category": "HDD",
+      "brand": "Seagate",
+      "model": "IronWolf 4TB NAS",
+      "specs": {
+        "capacity_gb": 4000,
+        "rpm": 5900,
+        "cache_mb": 256,
+        "interface": "SATA III",
+        "release_date": "2021-03-20"
+      },
+      "release_date": "2021-03-20"
+    },
+    {
+      "category": "HDD",
+      "brand": "WD",
+      "model": "Red Plus 4TB NAS",
+      "specs": {
+        "capacity_gb": 4000,
+        "rpm": 5400,
+        "cache_mb": 256,
+        "interface": "SATA III",
+        "release_date": "2021-06-01"
+      },
+      "release_date": "2021-06-01"
+    },
+    {
+      "category": "HDD",
+      "brand": "Toshiba",
+      "model": "X300 6TB 7200RPM",
+      "specs": {
+        "capacity_gb": 6000,
+        "rpm": 7200,
+        "cache_mb": 128,
+        "interface": "SATA III",
+        "release_date": "2022-03-01"
+      },
+      "release_date": "2022-03-01"
+    },
+    {
+      "category": "HDD",
+      "brand": "WD",
+      "model": "Black 2TB 7200RPM",
+      "specs": {
+        "capacity_gb": 2000,
+        "rpm": 7200,
+        "cache_mb": 256,
+        "interface": "SATA III",
+        "release_date": "2021-10-01"
+      },
+      "release_date": "2021-10-01"
+    }
+  ],
+  "M2": [
+    {
+      "category": "M2",
+      "brand": "Samsung",
+      "model": "990 PRO 2TB M.2 NVMe",
+      "specs": {
+        "capacity_gb": 2000,
+        "interface": "NVMe PCIe 4.0",
+        "read_mbps": 7450,
+        "write_mbps": 6900,
+        "release_date": "2022-10-01"
+      },
+      "release_date": "2022-10-01"
+    },
+    {
+      "category": "M2",
+      "brand": "WD",
+      "model": "Black SN850X 2TB M.2 NVMe",
+      "specs": {
+        "capacity_gb": 2000,
+        "interface": "NVMe PCIe 4.0",
+        "read_mbps": 7300,
+        "write_mbps": 6600,
+        "release_date": "2022-07-12"
+      },
+      "release_date": "2022-07-12"
+    },
+    {
+      "category": "M2",
+      "brand": "Kingston",
+      "model": "KC3000 1TB M.2 NVMe",
+      "specs": {
+        "capacity_gb": 1000,
+        "interface": "NVMe PCIe 4.0",
+        "read_mbps": 7000,
+        "write_mbps": 6000,
+        "release_date": "2022-02-14"
+      },
+      "release_date": "2022-02-14"
+    },
+    {
+      "category": "M2",
+      "brand": "Crucial",
+      "model": "T500 1TB M.2 NVMe",
+      "specs": {
+        "capacity_gb": 1000,
+        "interface": "NVMe PCIe 4.0",
+        "read_mbps": 7400,
+        "write_mbps": 7000,
+        "release_date": "2023-02-01"
+      },
+      "release_date": "2023-02-01"
+    },
+    {
+      "category": "M2",
+      "brand": "Samsung",
+      "model": "980 500GB M.2 NVMe",
+      "specs": {
+        "capacity_gb": 500,
+        "interface": "NVMe PCIe 3.0",
+        "read_mbps": 3100,
+        "write_mbps": 2600,
+        "release_date": "2021-03-01"
+      },
+      "release_date": "2021-03-01"
+    },
+    {
+      "category": "M2",
+      "brand": "WD",
+      "model": "Blue SN570 1TB M.2 NVMe",
+      "specs": {
+        "capacity_gb": 1000,
+        "interface": "NVMe PCIe 3.0",
+        "read_mbps": 3500,
+        "write_mbps": 3000,
+        "release_date": "2021-06-01"
+      },
+      "release_date": "2021-06-01"
+    },
+    {
+      "category": "M2",
+      "brand": "Seagate",
+      "model": "FireCuda 520 2TB M.2 NVMe",
+      "specs": {
+        "capacity_gb": 2000,
+        "interface": "NVMe PCIe 4.0",
+        "read_mbps": 5000,
+        "write_mbps": 4400,
+        "release_date": "2021-01-01"
+      },
+      "release_date": "2021-01-01"
+    }
+  ],
+  "PSU": [
+    {
+      "category": "PSU",
+      "brand": "Corsair",
+      "model": "RM850x 850W 80+ Gold",
+      "specs": {
+        "watts": 850,
+        "efficiency": "80+ Gold",
+        "modular": "Full",
+        "release_date": "2021-06-01"
+      },
+      "release_date": "2021-06-01"
+    },
+    {
+      "category": "PSU",
+      "brand": "Seasonic",
+      "model": "FOCUS GX-750 750W 80+ Gold",
+      "specs": {
+        "watts": 750,
+        "efficiency": "80+ Gold",
+        "modular": "Full",
+        "release_date": "2020-09-01"
+      },
+      "release_date": "2020-09-01"
+    },
+    {
+      "category": "PSU",
+      "brand": "be quiet!",
+      "model": "Dark Power 13 1000W 80+ Titanium",
+      "specs": {
+        "watts": 1000,
+        "efficiency": "80+ Titanium",
+        "modular": "Full",
+        "release_date": "2022-11-01"
+      },
+      "release_date": "2022-11-01"
+    },
+    {
+      "category": "PSU",
+      "brand": "EVGA",
+      "model": "SuperNOVA 650 G6 650W 80+ Gold",
+      "specs": {
+        "watts": 650,
+        "efficiency": "80+ Gold",
+        "modular": "Full",
+        "release_date": "2021-04-01"
+      },
+      "release_date": "2021-04-01"
+    },
+    {
+      "category": "PSU",
+      "brand": "Corsair",
+      "model": "CX650M 650W 80+ Bronze",
+      "specs": {
+        "watts": 650,
+        "efficiency": "80+ Bronze",
+        "modular": "Semi",
+        "release_date": "2020-03-01"
+      },
+      "release_date": "2020-03-01"
+    },
+    {
+      "category": "PSU",
+      "brand": "Thermaltake",
+      "model": "Toughpower GF3 850W 80+ Gold",
+      "specs": {
+        "watts": 850,
+        "efficiency": "80+ Gold",
+        "modular": "Full",
+        "release_date": "2022-10-01"
+      },
+      "release_date": "2022-10-01"
+    },
+    {
+      "category": "PSU",
+      "brand": "Cooler Master",
+      "model": "V850 SFX Gold 850W",
+      "specs": {
+        "watts": 850,
+        "efficiency": "80+ Gold",
+        "modular": "Full",
+        "release_date": "2022-06-01"
+      },
+      "release_date": "2022-06-01"
+    }
+  ],
+  "COOLING": [
+    {
+      "category": "COOLING",
+      "brand": "Noctua",
+      "model": "NH-D15",
+      "specs": {
+        "type": "Air",
+        "tdp_watts": 250,
+        "noise_dba": 24.6,
+        "release_date": "2020-01-01"
+      },
+      "release_date": "2020-01-01"
+    },
+    {
+      "category": "COOLING",
+      "brand": "be quiet!",
+      "model": "Dark Rock Pro 4",
+      "specs": {
+        "type": "Air",
+        "tdp_watts": 250,
+        "noise_dba": 24.3,
+        "release_date": "2020-06-01"
+      },
+      "release_date": "2020-06-01"
+    },
+    {
+      "category": "COOLING",
+      "brand": "Corsair",
+      "model": "iCUE H150i Elite LCD XT",
+      "specs": {
+        "type": "AIO 360mm",
+        "tdp_watts": 300,
+        "noise_dba": 25,
+        "release_date": "2022-09-01"
+      },
+      "release_date": "2022-09-01"
+    },
+    {
+      "category": "COOLING",
+      "brand": "Arctic",
+      "model": "Liquid Freezer II 280",
+      "specs": {
+        "type": "AIO 280mm",
+        "tdp_watts": 280,
+        "noise_dba": 22.5,
+        "release_date": "2021-02-01"
+      },
+      "release_date": "2021-02-01"
+    },
+    {
+      "category": "COOLING",
+      "brand": "Deepcool",
+      "model": "AK620",
+      "specs": {
+        "type": "Air",
+        "tdp_watts": 260,
+        "noise_dba": 28,
+        "release_date": "2022-01-01"
+      },
+      "release_date": "2022-01-01"
+    },
+    {
+      "category": "COOLING",
+      "brand": "Noctua",
+      "model": "NH-U12S chromax.black",
+      "specs": {
+        "type": "Air",
+        "tdp_watts": 200,
+        "noise_dba": 22.4,
+        "release_date": "2020-09-01"
+      },
+      "release_date": "2020-09-01"
+    },
+    {
+      "category": "COOLING",
+      "brand": "Corsair",
+      "model": "iCUE H100i Elite LCD XT",
+      "specs": {
+        "type": "AIO 240mm",
+        "tdp_watts": 250,
+        "noise_dba": 24,
+        "release_date": "2022-09-01"
+      },
+      "release_date": "2022-09-01"
+    }
+  ]
+}

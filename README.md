@@ -1,0 +1,167 @@
+# PC Parts Advisor
+
+Система рекомендаций по оценке цен на компьютерные комплектующие.
+
+## Описание
+
+Веб-сервис для сравнения себестоимости и рыночной цены ПК-компонентов. Пользователь ищет товар, получает оценку обоснованности наценки на основе факторов (бренд, качество, актуальность, популярность) и рекомендации аналогов с лучшей ценой/качеством.
+
+## Быстрый старт
+
+### Docker (рекомендуемый способ)
+
+```bash
+# Запуск всего стека
+docker compose up -d
+
+# Заполнение БД тестовыми данными
+docker compose exec backend python data_pipeline/seed_all.py
+
+# (опционально) Обучение ML моделей (кластеризация + предиктор цены)
+docker compose exec backend python scripts/train_ml.py
+```
+
+Откройте:
+- **http://localhost:5173** — веб-интерфейс
+- **http://localhost:8000/docs** — Swagger API
+
+### Локальная разработка
+
+**Backend:**
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+```
+
+**Frontend:**
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## Структура проекта
+
+```
+├── backend/
+│   ├── app/
+│   │   ├── main.py           # FastAPI приложение
+│   │   ├── models.py         # SQLAlchemy модели
+│   │   ├── schemas.py        # Pydantic схемы
+│   │   ├── database.py       # Подключение к БД
+│   │   ├── config.py         # Настройки
+│   │   ├── markup_utils.py   # Алгоритм расчёта наценки
+│   │   ├── redis_client.py   # Redis клиент
+│   │   ├── scheduler.py      # APScheduler
+│   │   └── routers/
+│   │       ├── products.py   # CRUD товаров
+│   │       ├── search.py     # Поиск с наценкой
+│   │       ├── alternatives.py # Подбор аналогов
+│   │       ├── daily.py      # Товары дня
+│   │       └── static_pages.py # Статические страницы
+│   ├── data_pipeline/
+│   │   ├── seed_all.py       # Заполнение БД
+│   │   ├── seed_data.py      # Загрузка спецификаций
+│   │   ├── seed_costs.py     # Расчёт себестоимости
+│   │   ├── seed_prices.py    # Генерация цен
+│   │   └── seed_reviews.py   # Отзывы и популярность
+│   ├── tests/                # Тесты (pytest)
+│   ├── alembic/              # Миграции БД
+│   └── requirements.txt
+├── frontend/
+│   └── src/
+│       ├── api/              # API клиент
+│       ├── components/       # React компоненты
+│       ├── pages/            # Страницы
+│       └── types/            # TypeScript типы
+├── data/                     # JSON спецификации
+├── docker-compose.yml        # Оркестрация
+├── render.yaml               # Деплой на Render
+└── .github/workflows/ci.yml  # CI/CD
+```
+
+## API
+
+| Метод | Endpoint | Описание |
+|-------|----------|----------|
+| GET | `/api/health` | Проверка работоспособности |
+| GET | `/api/v1/products/` | Список товаров |
+| GET | `/api/v1/products/{id}` | Детали товара |
+| GET | `/api/v1/search?query=` | Поиск с наценкой |
+| POST | `/api/v1/alternatives` | Подбор аналогов |
+| GET | `/api/v1/daily` | Товары дня |
+| GET | `/about` | О проекте |
+| GET | `/privacy` | Политика конфиденциальности |
+
+## Алгоритм наценки
+
+Наценка рассчитывается по формуле:
+
+```
+markup % = (market_price - cost_estimate) / cost_estimate * 100
+adjusted_markup = markup % × weighted_factor
+
+weighted_factor = brand×0.25 + quality×0.30 + relevance×0.20 + popularity×0.25
+```
+
+Порог: 40%. Если `adjusted_markup > 40%` — наценка завышена.
+
+## Тесты
+
+```bash
+cd backend
+python -m pytest tests/ -v
+```
+
+## Ручной сбор цен из магазинов (DNS / Ozon / Citilink)
+
+Скрипер запускается **только вручную** и в режиме best-effort (возможны капча/блокировки, особенно у Ozon/Citilink).
+Цель — собрать ~100 цен на категорию в БД (в `price_history`) для демонстрации “источников цен”.
+
+В Docker:
+
+```bash
+docker compose exec backend python data_pipeline/scrape_marketplaces.py --stores dns,ozon,citilink --limit 100 --headless true
+```
+
+Проверочный прогон без записи в БД:
+
+```bash
+docker compose exec backend python data_pipeline/scrape_marketplaces.py --stores dns,ozon,citilink --limit 20 --dry-run
+```
+
+## Обновление реальных цен (DNS, опционально)
+
+Парсинг сайтов без официальных API может быть нестабилен (капча/бан/смена верстки).
+Поэтому включается явно через переменные окружения.
+
+- `ENABLE_DNS_SCRAPER=true` — включает обновление DNS цен (через Playwright + Chromium в Docker-образе)
+- `DNS_SCRAPER_HEADLESS=true|false` — headless режим
+- `PRICE_REFRESH_MAX_PRODUCTS=25` — сколько товаров обновлять за один прогон
+
+Пример (в Docker):
+
+```bash
+docker compose exec backend bash -lc "ENABLE_DNS_SCRAPER=true python -c \"from app.scheduler import update_prices_job; update_prices_job()\""
+```
+
+## Деплой на Render
+
+1. Создайте репозиторий на GitHub
+2. Подключите к Render (render.com)
+3. Render автоматически прочитает `render.yaml`
+
+## Технологии
+
+- **Frontend:** React 19, TypeScript, Vite, Tailwind CSS
+- **Backend:** FastAPI, Python 3.11, SQLAlchemy
+- **База данных:** PostgreSQL 15, Alembic
+- **Кэш:** Redis 7
+- **Планировщик:** APScheduler
+- **Тесты:** pytest, httpx
+- **Деплой:** Docker, Render
+
+## Лицензия
+
+MIT

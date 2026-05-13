@@ -1,0 +1,14 @@
+brand,model,source,price,date,url
+NVIDIA,RTX 4070,DNS,62999,2026-04-10,https://www.dns-shop.ru/search/?q=RTX+4070
+NVIDIA,RTX 4080,DNS,99999,2026-04-10,https://www.dns-shop.ru/search/?q=RTX+4080
+NVIDIA,RTX 4090,DNS,159999,2026-04-10,https://www.dns-shop.ru/search/?q=RTX+4090
+NVIDIA,RTX 3080,DNS,54999,2026-04-10,https://www.dns-shop.ru/search/?q=RTX+3080
+NVIDIA,RTX 3070,DNS,42999,2026-04-10,https://www.dns-shop.ru/search/?q=RTX+3070
+AMD,Ryzen 7 7800X3D,DNS,34999,2026-04-10,https://www.dns-shop.ru/search/?q=Ryzen+7+7800X3D
+AMD,Ryzen 9 7950X,DNS,54999,2026-04-10,https://www.dns-shop.ru/search/?q=Ryzen+9+7950X
+AMD,Ryzen 5 7600X,DNS,24999,2026-04-10,https://www.dns-shop.ru/search/?q=Ryzen+5+7600X
+Intel,Core i7-14700K,DNS,39999,2026-04-10,https://www.dns-shop.ru/search/?q=Core+i7-14700K
+Intel,Core i9-14900K,DNS,59999,2026-04-10,https://www.dns-shop.ru/search/?q=Core+i9-14900K
+Intel,Core i5-14400,DNS,19999,2026-04-10,https://www.dns-shop.ru/search/?q=Core+i5-14400
+Kingston,Fury Beast DDR5 32GB,DNS,8999,2026-04-10,https://www.dns-shop.ru/search/?q=DDR5+32GB
+Samsung,990 Pro 1TB,DNS,12999,2026-04-10,https://www.dns-shop.ru/search/?q=990+Pro
