@@ -106,6 +106,8 @@ class PricePrediction(Base):
     predicted_3m = Column(Float, nullable=True, comment="Прогноз на 3 месяца")
     trend = Column(String(20), nullable=True, comment="Тренд: rising, falling, stable")
     recommendation = Column(String(50), nullable=True, comment="Рекомендация: buy_now, wait, no_rush")
+    target_price = Column(Float, nullable=True, comment="Рекомендованная целевая цена покупки")
+    price_gap_pct = Column(Float, nullable=True, comment="Отклонение текущей цены от целевой (%)")
     confidence = Column(Float, nullable=True, comment="Уверенность прогноза (0-1)")
     last_updated = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 

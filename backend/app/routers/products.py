@@ -229,6 +229,8 @@ def _prediction_to_dict(pred: PricePrediction) -> dict:
         "predicted_3m": pred.predicted_3m,
         "trend": pred.trend,
         "recommendation": pred.recommendation,
+        "target_price": pred.target_price,
+        "price_gap_pct": pred.price_gap_pct,
         "confidence": pred.confidence,
         "last_updated": pred.last_updated,
     }
