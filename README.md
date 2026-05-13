@@ -130,36 +130,40 @@ cd backend
 python -m pytest tests/ -v
 ```
 
-## Ручной сбор цен из магазинов (DNS / Ozon / Citilink)
+## Политика источников цен
 
-Скрипер запускается **только вручную** и в режиме best-effort (возможны капча/блокировки, особенно у Ozon/Citilink).
-Цель — собрать ~100 цен на категорию в БД (в `price_history`) для демонстрации “источников цен”.
+В проекте отключён runtime web-scraping маркетплейсов.  
+Актуальная политика: только импорт из открытых CSV/TSV источников через `data_pipeline/import_open_prices.py`.
 
-В Docker:
+
+## Импорт цен из открытых источников (без парсинга)
+
+Проект использует open-data импорт и не выполняет web-scraping маркетплейсов в runtime.
+
+### Операционный сценарий
+
+1. Подготовьте CSV/TSV с колонками: `brand`, `model`, `price`, (опционально) `source`, `date`.
+2. Запустите проверочный прогон:
 
 ```bash
-docker compose exec backend python data_pipeline/scrape_marketplaces.py --stores dns,ozon,citilink --limit 100 --headless true
+docker compose exec backend python data_pipeline/import_open_prices.py --url "https://example.com/prices.csv" --dry-run
 ```
 
-Проверочный прогон без записи в БД:
+3. Запустите импорт с quality-gate:
 
 ```bash
-docker compose exec backend python data_pipeline/scrape_marketplaces.py --stores dns,ozon,citilink --limit 20 --dry-run
+docker compose exec backend python data_pipeline/import_open_prices.py \
+  --url "https://example.com/prices.csv" \
+  --max-age-days 14 \
+  --fail-on-quality-threshold \
+  --max-unknown-ratio 0.20 \
+  --max-invalid-ratio 0.10
 ```
 
-## Обновление реальных цен (DNS, опционально)
-
-Парсинг сайтов без официальных API может быть нестабилен (капча/бан/смена верстки).
-Поэтому включается явно через переменные окружения.
-
-- `ENABLE_DNS_SCRAPER=true` — включает обновление DNS цен (через Playwright + Chromium в Docker-образе)
-- `DNS_SCRAPER_HEADLESS=true|false` — headless режим
-- `PRICE_REFRESH_MAX_PRODUCTS=25` — сколько товаров обновлять за один прогон
-
-Пример (в Docker):
+4. Получите последний отчёт качества:
 
 ```bash
-docker compose exec backend bash -lc "ENABLE_DNS_SCRAPER=true python -c \"from app.scheduler import update_prices_job; update_prices_job()\""
+curl http://localhost:8000/api/v1/import-open-prices-report/latest
 ```
 
 

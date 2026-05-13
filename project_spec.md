@@ -1,90 +1,76 @@
-# Спецификация проекта: система рекомендаций по оценке цен на онлайн-площадках
+# Спецификация проекта: система рекомендаций оценки цен на онлайн-площадках
 
-## 1. Общее описание
-Веб-сервис для сравнения оценочной себестоимости и рыночной цены компьютерных комплектующих.
+## 1. Назначение
+Сервис оценивает рыночные цены комплектующих и формирует рекомендации:
+- оценка наценки (normal/high),
+- подбор альтернатив,
+- рекомендация по покупке (`buy_now` / `wait` / `no_rush`) с объяснением.
 
-**Цель:** помочь пользователю определить, является ли наценка обоснованной, и предложить 3–5 альтернатив с лучшим соотношением цена/качество.
+## 2. Принципы данных
+1. **Runtime web-scraping отключён**.
+2. Источники цен: только открытые CSV/TSV/API выгрузки.
+3. Импорт цен выполняется через `data_pipeline/import_open_prices.py`.
+4. Каждый импорт формирует quality-report (saved/skipped/duplicates/invalid/unknown).
 
-**Начальный охват категорий:** GPU, CPU, RAM, SSD/HDD/M.2.
+## 3. Технологический стек
+- Frontend: React + Vite + Tailwind CSS
+- Backend: FastAPI (Python 3.11+)
+- DB: PostgreSQL + SQLAlchemy + Alembic
+- Cache: Redis
+- Scheduler: APScheduler
+- Deploy: Docker / Render
 
-## 2. Технологический стек
-- **Frontend:** React + Vite + Tailwind CSS
-- **Backend:** FastAPI (Python 3.11+)
-- **База данных:** PostgreSQL + SQLAlchemy
-- **Кэш / статистика:** Redis
-- **Планировщик задач:** APScheduler / Cron
-- **Деплой:** Docker + Render/Railway
+## 4. Модель данных
+Ключевые таблицы:
+- `products` (категория, бренд, модель, `specs` JSON)
+- `price_history` (история цен)
+- `cost_estimates` (оценка себестоимости)
+- `reviews_quality` (качество)
+- `popularity_stats` (популярность)
+- `price_predictions`:
+  - `current_price`
+  - `predicted_1m`
+  - `predicted_3m`
+  - `target_price`
+  - `price_gap_pct`
+  - `recommendation`
+  - `recommendation_reason`
 
-## 3. Архитектура и данные
-Основные таблицы:
-- `products`: id, category, brand, model, specs (JSONB), release_date
-- `price_history`: product_id, source, price, date
-- `cost_estimates`: product_id, materials_cost, logistics_cost, labor_cost, total, last_updated
-- `reviews_quality`: product_id, avg_rating, defect_rate, source
-- `popularity_stats`: product_id, daily_views, last_updated
+## 5. Алгоритм рекомендаций
+### 5.1 Наценка
+- `markup% = (market_price - cost_estimate) / cost_estimate * 100`
+- `adjusted_markup = markup% * weighted_factor`
+- Порог: `adjusted_markup > 40% => high`
 
-## 4. Сбор и обработка данных
-### 4.1 Рыночные цены
-- Источники: официальные API / CSV / подготовленные датасеты.
-- Частота обновления: 1–2 раза в неделю.
-- Агрегация: медиана по доступным источникам.
-- Устойчивость: отсечение выбросов (квантили 5–95%).
+### 5.2 Рекомендательная цена
+`target_price` рассчитывается как blended-якорь:
+- медиана последних цен,
+- прогноз на 1 месяц,
+- (опционально) cost-anchor.
 
-### 4.2 Себестоимость
-Точные заводские данные недоступны, используется оценочная модель:
-- materials_cost: публичные спецификации и рыночные данные по материалам;
-- logistics_cost: открытые тарифы логистики и таможенные коэффициенты;
-- labor_cost: отраслевые нормативы сборки и тестирования.
+`price_gap_pct = (current_price - target_price) / target_price * 100`
 
-### 4.3 Хранение
-- Все цены нормализуются в RUB;
-- История цен версионируется для анализа динамики;
-- Redis используется для кэширования частых запросов.
+На основе `trend + price_gap_pct` формируется:
+- `buy_now`
+- `wait`
+- `no_rush`
 
-## 5. Логика рекомендаций
-### 5.1 Факторы
-- Бренд (0.25)
-- Качество (0.30)
-- Актуальность (0.20)
-- Популярность (0.25)
+## 6. API-контракт (обязательные сценарии)
+- `/api/v1/products/{id}`: включает поля прогноза и explainability
+- `/api/v1/search`: возвращает markup-поля
+- `/api/v1/alternatives`: возвращает альтернативы и score
+- `/api/v1/import-prices-csv`: ручной CSV-импорт
+- `/api/v1/import-open-prices-report/latest`: получение последнего quality-report
+- legacy DNS fetch endpoints: `410 Gone`
 
-### 5.2 Формулы
-- `markup % = (market_price - cost_estimate) / cost_estimate * 100`
-- `adjusted_markup = markup % * weighted_factor`
-- Порог завышения: `adjusted_markup > 40%`
+## 7. Метрики для защиты
+- Price prediction: MAE, MAPE
+- Recommendations: Precision@K, HitRate@K
+- Coverage: доля товаров с валидными рекомендациями
+- Perf: p50/p95 latency
 
-### 5.3 Аналоги
-Фильтрация по категории, затем ранжирование по:
-- уровню наценки,
-- качеству,
-- релевантности характеристик.
-
-## 6. Интерфейс
-- Главная страница: поиск + “Товары дня”.
-- Карточка товара: характеристики, себестоимость, рыночная цена, оценка наценки.
-- Блок “Рекомендуемые аналоги”: таблица сравнения.
-- Статические страницы: About, Privacy.
-
-## 7. Юридическая и этическая часть
-- Дисклеймер о том, что расчёты носят оценочный характер.
-- Политика конфиденциальности на отдельной странице (`/privacy`).
-- Персональные данные собираются только при явном согласии.
-
-## 8. Метрики качества (для дипломной защиты)
-- Точность оценки цены: MAE, MAPE.
-- Качество рекомендаций: Precision@K, HitRate@K.
-- Покрытие каталога (coverage).
-- Время ответа API (p50/p95 latency).
-
-## 9. План развития
-1. Укрепить data pipeline и контроль качества данных.
-2. Добавить explainability: вклад факторов в итоговую оценку.
-3. Провести сравнение детерминированного baseline и ML-модели.
-4. Добавить мониторинг и нагрузочное тестирование.
-
-## 10. Требования к окружению
-- Python 3.11+
-- Node.js 20+
-- PostgreSQL 15+
-- Redis 7+
-- Docker Compose
+## 8. План развития
+1. Расширить категорийные `specs` и их вклад в `target_price`.
+2. Добавить quality-gates на CI для open-data импорта.
+3. Сравнить deterministic baseline vs ML-модель.
+4. Добавить наблюдаемость: structured logs + import dashboards.
