@@ -1,198 +1,76 @@
-Спецификация проекта: Система рекомендаций по оценке цен на компьютерные комплектующие
-1. Общее описание
-Веб-сервис для сравнения себестоимости и рыночной цены ПК-компонентов. Пользователь ищет товар, получает оценку обоснованности наценки на основе факторов (бренд, качество, актуальность, популярность) и рекомендации аналогов с лучшей ценой/качеством. Начальный охват: GPU, CPU, RAM, SSD/HDD/M.2.
-2. Технологический стек
-Компонент
-Технология
-Обоснование
-Frontend
-React + Vite + Tailwind CSS
-Минималистичный, быстрый, легко поддерживается. Без избыточных фреймворков.
-Backend
-FastAPI (Python 3.11+)
-Лёгкий, асинхронный, идеален для data-логики и API.
-База данных
-PostgreSQL + SQLAlchemy
-Надёжное хранение структурированных данных, поддержка транзакций.
-Кэш/Статистика
-Redis
-Хранение счётчиков просмотров, кэширование цен, расчёт "Товаров дня".
-Оркестрация данных
-APScheduler / Cron
-Периодический запуск скриптов обновления цен.
-Деплой
-Docker + Render/Railway
-Контейнеризация, бесплатные тарифы для диплома, минимум инфраструктуры.
-3. Архитектура и структура данных
-1234567891011
-Основные таблицы БД:
-products: id, category, brand, model, specs (JSONB), release_date
-price_history: product_id, source, price, date
-cost_estimates: product_id, materials_cost, logistics_cost, labor_cost, total, last_updated
-reviews_quality: product_id, avg_rating, defect_rate, source
-popularity_stats: product_id, daily_views, last_updated
-4. Сбор и обработка данных
-4.1 Рыночные цены
-Источники: Открытые API/филиалы (Ozon Partner API, Yandex Market API, DNS/Citilink прайс-листы в CSV), агрегаторы (OpenPrice, PriceAPI free tier).
-Метод: Периодический опрос (1-2 раза в неделю). При отсутствии API — парсинг открытых страниц с соблюдением robots.txt и rate-limiting. Для диплома допускается статический датасет + имитация обновлений.
-Агрегация: Медианная цена по РФ, отсечение выбросов (квантили 5-95%).
-4.2 Себестоимость
-Точные заводские данные закрыты. Используется эталонная модель оценки:
-materials_cost: публичные спецификации + средние рыночные цены сырья (алюминий, медь, кремний, пластик) на биржах/отчётах производителей.
-logistics_cost: открытые тарифы грузоперевозок (Китай/ЕС → РФ) + таможня.
-labor_cost: нормативы сборки/тестирования (открытые отраслевые отчёты, статистика зарплаты в электронике).
-Данные хранятся как фиксированные коэффициенты на категорию, обновляются раз в квартал.
-4.3 Хранение и использование
-Все цены нормализуются к одной валюте (RUB) и дате.
-Кэширование в Redis для снижения нагрузки на БД и API.
-Версионирование цен для отслеживания динамики.
-5. Логика рекомендаций и анализ наценки
-5.1 Факторы наценки
-Фактор
-Метрика
-Вес
-Бренд
-Коэффициент премиальности (статистика рынка)
-0.25
-Качество
-Средний рейтинг, % брака, гарантия
-0.30
-Актуальность
-Возраст модели, поддержка драйверов/стандартов
-0.20
-Популярность
-Динамика просмотров/запросов
-0.25
-5.2 Алгоритм
-Рассчитать markup % = (market_price - cost_estimate) / cost_estimate * 100.
-Скорректировать наценку по весовым факторам.
-Если скорректированная наценка > порога (напр. 40%), пометить как "завышена".
-Поиск аналогов: фильтрация по категории, сравнение производительности/характеристик, сортировка по score = (1/markup) * quality_factor * relevance.
-Вывод: 3-5 аналогов с кратким обоснованием.
-Примечание: Алгоритм детерминированный. ML (scikit-learn) можно добавить на этапе доработки диплома при наличии датасета.
-6. Пользовательский интерфейс
-Главная: Краткое описание проекта, блок "Товары дня" (топ-5 по daily_views из Redis), поисковая строка.
-Карточка товара:
-Характеристики, фото.
-Расчётная себестоимость (разбивка по статьям).
-Средняя рыночная цена по РФ.
-Диаграмма/таблица наценки с пояснением факторов.
-Блок "Рекомендуемые аналоги" с таблицей сравнения.
-Футер:
-Статус: "Проект находится в стадии разработки".
-Контакты поддержки (заглушка).
-Дисклеймер: "Информация носит оценочный характер. Администрация не несёт ответственности за неактуальность цен и расчётов".
-Копирайт: © 2024-2026 [Ваше ФИО/Название]. Все права защищены.
-Ограничение: В интерфейсе не используются эмодзи. Строгая типографика и семантическая вёрстка.
-7. Политика данных и юридическая часть
-Сбор данных: Email/телефон собираются только при явном согласии (форма обратной связи/подписка). Не передаются третьим лицам.
-Хранение: Хэширование паролей (bcrypt), шифрование персональных данных (AES-256), удаление по истечении 12 месяцев или по запросу.
-Согласие: Чекбокс "Я ознакомлен с Политикой конфиденциальности" перед отправкой формы.
-Политика: Отдельная страница /privacy. Описание целей сбора, сроков хранения, прав пользователя (доступ, исправление, удаление), контактов оператора данных. Соответствие 152-ФЗ.
-8. Этапы реализации
-Проектирование БД и API (2 недели): Модели, миграции, базовые эндпоинты /search, /product/{id}.
-Пайплайн данных (2 недели): Скрипты сбора цен, расчёт себестоимости, парсер/интеграция API, Redis-кэш.
-Алгоритм рекомендаций (1.5 недели): Весовая модель, логика аналогов, юнит-тесты.
-Фронтенд (2 недели): React-роутинг, компоненты, интеграция с API, адаптив.
-Деплой и тестирование (1 неделя): Docker, CI/CD, нагрузочные тесты, проверка дисклеймеров/политики.
-Оформление диплома (параллельно): Описание архитектуры, метрики, скриншоты, выводы.
-9. Требования к окружению
-Python 3.11+, Node 20+, PostgreSQL 15+, Redis 7+
-docker-compose для локального запуска
-Зависимости: fastapi, uvicorn, sqlalchemy, psycopg2, redis, httpx, numpy, pandas, alembic
-Минимальный хостинг: 1 vCPU, 1-2 GB RAM (достаточно для Render/Railway)
-Файл готов к сохранению как PROJECT_SPEC.md. Рекомендуется начать с этапа 1, зафиксировать схемы БД и контракт API до написания фронтенда.
+# Спецификация проекта: система рекомендаций оценки цен на онлайн-площадках
 
+## 1. Назначение
+Сервис оценивает рыночные цены комплектующих и формирует рекомендации:
+- оценка наценки (normal/high),
+- подбор альтернатив,
+- рекомендация по покупке (`buy_now` / `wait` / `no_rush`) с объяснением.
 
+## 2. Принципы данных
+1. **Runtime web-scraping отключён**.
+2. Источники цен: только открытые CSV/TSV/API выгрузки.
+3. Импорт цен выполняется через `data_pipeline/import_open_prices.py`.
+4. Каждый импорт формирует quality-report (saved/skipped/duplicates/invalid/unknown).
 
-Рекомендуемые MCP-серверы
-Сервер
-Назначение в проекте
-@modelcontextprotocol/server-postgres
-Чтение/запись БД (товары, цены, себестоимость)
-@modelcontextprotocol/server-fetch
-Запросы к открытым API маркетплейсов и тарифам логистики
-@modelcontextprotocol/server-python
-Выполнение локальных скриптов расчёта наценки и подбора аналогов
-@modelcontextprotocol/server-filesystem
-Чтение спецификаций, конфинов, логов пайплайна
-Навыки (Skills) для агента
-search_market_prices → вызов server-fetch + агрегация цен
-query_cost_data → вызов server-postgres (таблицы cost_estimates, products)
-calculate_markup → вызов server-python (скрипт calc_markup.py)
-recommend_alternatives → вызов server-python (скрипт find_alternatives.py)
-update_daily_stats → вызов server-postgres + redis-cli (через python-обёртку)
-Установка зависимостей
-bash
-12345
-Код подключения (Python MCP-клиент + маппинг скиллов)
-agent_mcp.py
-python
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546
-Интеграция с Qwen CLI
-Qwen CLI поддерживает tool-calling через конфигурацию tools. Оберните вызовы run_skill в JSON-схему, совместимую с OpenAI-форматом.
-Добавьте в ~/.qwen/config.yaml:
-yaml
-1234567891011
-Запускайте агент: qwen --config ~/.qwen/config.yaml --tools agent_mcp.py
-Примечания
-MCP-серверы запускаются как stdio-процессы. Не требуют отдельного хостинга.
-Для продакшена замените npx на локальные npm run или docker exec, чтобы избежать задержек.
-Логируйте вызовы инструментов через logging для отладки диплома.
-Все скрипты (calc_markup.py, find_alternatives.py) должны находиться в backend/data_pipeline/ и принимать/возвращать JSON.
-Copy
-Ask Qwen
-Explain
-Translate(ru-RU)
-npm error code E404
-npm error 404 Not Found - GET https://registry.npmjs.org/@modelcontextprotocol%2fserver-fetch - Not found
-npm error 404
-npm error 404  The requested resource '@modelcontextprotocol/server-fetch@*' could not be found or you do not have permission to access it.
-npm error 404
-npm error 404 Note that you can also install from a
-npm error 404 tarball, folder, http url, or git url.
-npm error A complete log of this run can be found in: C:\Users\Антон\AppData\Local\npm-cache\_logs\2026-04-09T11_43_57_482Z-debug-0.log
-stem
+## 3. Технологический стек
+- Frontend: React + Vite + Tailwind CSS
+- Backend: FastAPI (Python 3.11+)
+- DB: PostgreSQL + SQLAlchemy + Alembic
+- Cache: Redis
+- Scheduler: APScheduler
+- Deploy: Docker / Render
 
-Thinking completed
-Проблема в том, что пакеты с префиксом @modelcontextprotocol/ в npm существуют не для всех серверов. Официальные референс-реализации хранятся в моно-репозитории 
-GitHub
- и устанавливаются иначе.
-✅ Правильные команды установки (официальные серверы)
-Сервер
-Команда (TypeScript)
-Альтернатива (Python)
-fetch
-npx -y @modelcontextprotocol/server-fetch
-—
-filesystem
-npx -y @modelcontextprotocol/server-filesystem
-—
-git
-—
-uvx mcp-server-git 
-GitHub
-memory
-npx -y @modelcontextprotocol/server-memory
-—
-postgres
-❌ архивирован в официальном репо
-uvx mcp-server-postgres (community) или pip install mcp-server-postgres
-🔧 Рабочий agent_mcp.py (исправленный)
-python
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081
-📦 Установка зависимостей
-bash
-123456
-⚙️ Конфиг для Qwen CLI (~/.qwen/config.yaml)
-yaml
-12345678910111213141516171819202122232425262728
-🔐 Важно для диплома
-PostgreSQL: Официальный сервер только для чтения 
-GitHub
-. Для записи используйте community-реализации (nahmanmate/postgresql-mcp-server 
-GitHub
-) или оберните запросы в свой Python-скрипт.
-Безопасность: filesystem сервер ограничьте папкой ./data через аргументы, чтобы агент не читал системные файлы.
-Логирование: Добавьте logging.basicConfig(level=logging.INFO) для отладки вызовов инструментов.
-Если npx тормозит на первом запуске — предварительно выполните npm install -g @modelcontextprotocol/server-fetch, чтобы кэшировать пакет.
+## 4. Модель данных
+Ключевые таблицы:
+- `products` (категория, бренд, модель, `specs` JSON)
+- `price_history` (история цен)
+- `cost_estimates` (оценка себестоимости)
+- `reviews_quality` (качество)
+- `popularity_stats` (популярность)
+- `price_predictions`:
+  - `current_price`
+  - `predicted_1m`
+  - `predicted_3m`
+  - `target_price`
+  - `price_gap_pct`
+  - `recommendation`
+  - `recommendation_reason`
+
+## 5. Алгоритм рекомендаций
+### 5.1 Наценка
+- `markup% = (market_price - cost_estimate) / cost_estimate * 100`
+- `adjusted_markup = markup% * weighted_factor`
+- Порог: `adjusted_markup > 40% => high`
+
+### 5.2 Рекомендательная цена
+`target_price` рассчитывается как blended-якорь:
+- медиана последних цен,
+- прогноз на 1 месяц,
+- (опционально) cost-anchor.
+
+`price_gap_pct = (current_price - target_price) / target_price * 100`
+
+На основе `trend + price_gap_pct` формируется:
+- `buy_now`
+- `wait`
+- `no_rush`
+
+## 6. API-контракт (обязательные сценарии)
+- `/api/v1/products/{id}`: включает поля прогноза и explainability
+- `/api/v1/search`: возвращает markup-поля
+- `/api/v1/alternatives`: возвращает альтернативы и score
+- `/api/v1/import-prices-csv`: ручной CSV-импорт
+- `/api/v1/import-open-prices-report/latest`: получение последнего quality-report
+- legacy DNS fetch endpoints: `410 Gone`
+
+## 7. Метрики для защиты
+- Price prediction: MAE, MAPE
+- Recommendations: Precision@K, HitRate@K
+- Coverage: доля товаров с валидными рекомендациями
+- Perf: p50/p95 latency
+
+## 8. План развития
+1. Расширить категорийные `specs` и их вклад в `target_price`.
+2. Добавить quality-gates на CI для open-data импорта.
+3. Сравнить deterministic baseline vs ML-модель.
+4. Добавить наблюдаемость: structured logs + import dashboards.
