@@ -166,6 +166,37 @@ docker compose exec backend python data_pipeline/import_open_prices.py \
 curl http://localhost:8000/api/v1/import-open-prices-report/latest
 ```
 
+
+## Импорт цен из открытых источников (без парсинга)
+
+Проект использует open-data импорт и не выполняет web-scraping маркетплейсов в runtime.
+
+### Операционный сценарий
+
+1. Подготовьте CSV/TSV с колонками: `brand`, `model`, `price`, (опционально) `source`, `date`.
+2. Запустите проверочный прогон:
+
+```bash
+docker compose exec backend python data_pipeline/import_open_prices.py --url "https://example.com/prices.csv" --dry-run
+```
+
+3. Запустите импорт с quality-gate:
+
+```bash
+docker compose exec backend python data_pipeline/import_open_prices.py \
+  --url "https://example.com/prices.csv" \
+  --max-age-days 14 \
+  --fail-on-quality-threshold \
+  --max-unknown-ratio 0.20 \
+  --max-invalid-ratio 0.10
+```
+
+4. Получите последний отчёт качества:
+
+```bash
+curl http://localhost:8000/api/v1/import-open-prices-report/latest
+```
+
 ## Деплой на Render
 
 1. Создайте репозиторий на GitHub
