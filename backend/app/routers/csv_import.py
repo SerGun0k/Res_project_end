@@ -2,6 +2,7 @@
 
 import csv
 import io
+import os
 from datetime import datetime
 from typing import Optional
 
@@ -13,6 +14,15 @@ from app.database import get_db
 from app.models import Product, PriceHistory
 
 router = APIRouter()
+
+
+def _get_open_reports_dir() -> str:
+    """Путь к директории с отчетами open-data импорта."""
+    override = os.getenv("OPEN_PRICE_REPORTS_DIR")
+    if override:
+        return override
+    reports_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "..", "data_pipeline", "reports")
+    return os.path.abspath(reports_dir)
 
 
 @router.post("/import-prices-csv")
@@ -162,4 +172,31 @@ async def get_price_sources(db: Session = Depends(get_db)):
             }
             for s in sources
         ]
+    }
+
+
+@router.get("/import-open-prices-report/latest")
+async def get_latest_open_prices_report():
+    """Вернуть последний quality-report импорта open prices."""
+    reports_dir = _get_open_reports_dir()
+    if not os.path.isdir(reports_dir):
+        return {"status": "empty", "message": "Отчёты ещё не сгенерированы"}
+
+    files = [
+        os.path.join(reports_dir, f)
+        for f in os.listdir(reports_dir)
+        if f.startswith("open_prices_report_") and f.endswith(".md")
+    ]
+    if not files:
+        return {"status": "empty", "message": "Отчёты ещё не сгенерированы"}
+
+    latest = max(files, key=os.path.getmtime)
+    with open(latest, "r", encoding="utf-8") as fp:
+        content = fp.read()
+
+    return {
+        "status": "ok",
+        "filename": os.path.basename(latest),
+        "generated_at": datetime.utcfromtimestamp(os.path.getmtime(latest)).isoformat(),
+        "content": content,
     }

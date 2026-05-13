@@ -39,6 +39,9 @@ class Settings(BaseSettings):
     ENABLE_DNS_SCRAPER: bool = False
     DNS_SCRAPER_HEADLESS: bool = True
     PRICE_REFRESH_MAX_PRODUCTS: int = 25
+    OPEN_PRICE_SOURCES: str = ""
+    OPEN_PRICE_MAX_AGE_DAYS: int = 14
+    OPEN_PRICE_ALLOWED_DOMAINS: str = ""
 
     # Данные
     DATA_DIR: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")

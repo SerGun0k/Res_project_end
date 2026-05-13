@@ -8,6 +8,7 @@ from sqlalchemy import func
 
 from app.database import get_db
 from app.models import Product, PriceHistory, CostEstimate, ReviewQuality, PopularityStats, PricePrediction
+from app.price_prediction import build_recommendation_reason
 from app.schemas import (
     ProductCreate,
     ProductRead,
@@ -221,6 +222,13 @@ def _popularity_to_dict(ps: PopularityStats) -> dict:
 
 
 def _prediction_to_dict(pred: PricePrediction) -> dict:
+    reason = build_recommendation_reason(
+        recommendation=pred.recommendation or "no_rush",
+        trend=pred.trend,
+        current_price=pred.current_price,
+        target_price=pred.target_price,
+        price_gap_pct=pred.price_gap_pct,
+    )
     return {
         "id": pred.id,
         "product_id": pred.product_id,
@@ -229,6 +237,9 @@ def _prediction_to_dict(pred: PricePrediction) -> dict:
         "predicted_3m": pred.predicted_3m,
         "trend": pred.trend,
         "recommendation": pred.recommendation,
+        "target_price": pred.target_price,
+        "price_gap_pct": pred.price_gap_pct,
+        "recommendation_reason": reason,
         "confidence": pred.confidence,
         "last_updated": pred.last_updated,
     }

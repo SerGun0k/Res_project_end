@@ -10,52 +10,8 @@ scheduler = BackgroundScheduler()
 
 
 def update_prices_job():
-    """Периодическое обновление цен (заглушка)"""
-    print(f"[{datetime.now()}] Запуск обновления цен...")
-    if not settings.ENABLE_DNS_SCRAPER:
-        print(f"[{datetime.now()}] DNS scraper disabled (ENABLE_DNS_SCRAPER=false)")
-        return
-
-    try:
-        from sqlalchemy import desc
-        from app.database import SessionLocal
-        from app.models import Product, PriceHistory
-        from data_pipeline.dns_scraper import get_product_price
-
-        db = SessionLocal()
-        try:
-            # Берём товары с наибольшим количеством просмотров (если есть поле/таблица),
-            # а если нет — просто последние добавленные.
-            products = (
-                db.query(Product)
-                .order_by(desc(Product.id))
-                .limit(settings.PRICE_REFRESH_MAX_PRODUCTS)
-                .all()
-            )
-
-            updated = 0
-            for p in products:
-                result = get_product_price(p.brand, p.model, p.category, headless=settings.DNS_SCRAPER_HEADLESS)
-                if not result:
-                    continue
-
-                db.add(
-                    PriceHistory(
-                        product_id=p.id,
-                        source="DNS",
-                        price=result.price,
-                        date=datetime.utcnow(),
-                    )
-                )
-                db.commit()
-                updated += 1
-
-            print(f"[{datetime.now()}] Обновление цен завершено: updated={updated}")
-        finally:
-            db.close()
-
-    except Exception as e:
-        print(f"[{datetime.now()}] Ошибка обновления цен: {e}")
+    """Периодическое обновление цен отключено: отказ от веб-парсинга."""
+    print(f"[{datetime.now()}] update_prices_job skipped: web scraping disabled by project policy")
 
 
 def reset_views_job():

@@ -107,6 +107,22 @@ weighted_factor = brand×0.25 + quality×0.30 + relevance×0.20 + popularity×0.
 
 Порог: 40%. Если `adjusted_markup > 40%` — наценка завышена.
 
+
+## Метрики и валидация рекомендательной системы
+
+Для полноценной защиты диплома рекомендуется фиксировать следующие метрики:
+
+- **Оценка цены:** MAE, MAPE
+- **Качество рекомендаций:** Precision@K, HitRate@K
+- **Покрытие каталога:** доля товаров, для которых система способна предложить релевантные аналоги
+- **Производительность API:** p50/p95 latency для `/api/v1/search` и `/api/v1/alternatives`
+
+Минимальный экспериментальный протокол:
+
+1. Подготовить отложенную выборку товаров по категориям GPU/CPU/RAM/SSD.
+2. Сравнить базовую детерминированную модель (веса факторов) и ML-вариант (при наличии датасета).
+3. Зафиксировать результаты в таблице (CSV/Markdown) и добавить выводы в отчёт.
+
 ## Тесты
 
 ```bash
@@ -144,6 +160,37 @@ docker compose exec backend python data_pipeline/scrape_marketplaces.py --stores
 
 ```bash
 docker compose exec backend bash -lc "ENABLE_DNS_SCRAPER=true python -c \"from app.scheduler import update_prices_job; update_prices_job()\""
+```
+
+
+## Импорт цен из открытых источников (без парсинга)
+
+Проект использует open-data импорт и не выполняет web-scraping маркетплейсов в runtime.
+
+### Операционный сценарий
+
+1. Подготовьте CSV/TSV с колонками: `brand`, `model`, `price`, (опционально) `source`, `date`.
+2. Запустите проверочный прогон:
+
+```bash
+docker compose exec backend python data_pipeline/import_open_prices.py --url "https://example.com/prices.csv" --dry-run
+```
+
+3. Запустите импорт с quality-gate:
+
+```bash
+docker compose exec backend python data_pipeline/import_open_prices.py \
+  --url "https://example.com/prices.csv" \
+  --max-age-days 14 \
+  --fail-on-quality-threshold \
+  --max-unknown-ratio 0.20 \
+  --max-invalid-ratio 0.10
+```
+
+4. Получите последний отчёт качества:
+
+```bash
+curl http://localhost:8000/api/v1/import-open-prices-report/latest
 ```
 
 ## Деплой на Render
