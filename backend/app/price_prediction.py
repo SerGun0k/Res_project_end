@@ -14,7 +14,7 @@ from typing import Optional
 
 from sqlalchemy.orm import Session
 
-from app.models import Product, PriceHistory, PricePrediction
+from app.models import Product, PriceHistory, PricePrediction, CostEstimate
 
 
 def calculate_price_prediction(db: Session, product_id: int) -> Optional[dict]:
@@ -74,13 +74,10 @@ def calculate_price_prediction(db: Session, product_id: int) -> Optional[dict]:
 
     if change_pct > 2:
         trend = "rising"
-        recommendation = "buy_now"
     elif change_pct < -2:
         trend = "falling"
-        recommendation = "wait"
     else:
         trend = "stable"
-        recommendation = "no_rush"
 
     # Уверенность: зависит от R² (коэффициент детерминации)
     y_mean = sum_y / n
@@ -93,12 +90,55 @@ def calculate_price_prediction(db: Session, product_id: int) -> Optional[dict]:
     else:
         confidence = 0.5
 
+    # --- Новая логика рекомендательной цены ---
+    # Якоря:
+    # 1) медиана последних цен (робастна к выбросам)
+    # 2) прогноз 1 месяца (краткосрочный тренд)
+    # 3) себестоимость + "разумная" наценка (если доступно)
+    sorted_recent = sorted(p.price for p in recent_prices)
+    mid = len(sorted_recent) // 2
+    if len(sorted_recent) % 2 == 0:
+        recent_median = (sorted_recent[mid - 1] + sorted_recent[mid]) / 2
+    else:
+        recent_median = sorted_recent[mid]
+
+    cost_estimate = db.query(CostEstimate).filter(
+        CostEstimate.product_id == product_id
+    ).first()
+    cost_anchor = None
+    if cost_estimate and cost_estimate.total and cost_estimate.total > 0:
+        # Консервативная "честная" наценка 25%
+        cost_anchor = cost_estimate.total * 1.25
+
+    anchor_points = [(recent_median, 0.55), (predicted_1m, 0.35)]
+    if cost_anchor is not None:
+        anchor_points.append((cost_anchor, 0.10))
+
+    total_weight = sum(w for _, w in anchor_points)
+    target_price = sum(v * w for v, w in anchor_points) / total_weight
+    target_price = max(target_price, current_price * 0.6)
+
+    price_gap_pct = ((current_price - target_price) / target_price) * 100 if target_price > 0 else 0.0
+
+    # Решение о действии:
+    # - buy_now: цена заметно ниже/около целевой или ожидается рост
+    # - wait: цена заметно выше целевой и есть нисходящий тренд
+    # - no_rush: промежуточный случай
+    if current_price <= target_price * 1.02 or (trend == "rising" and price_gap_pct <= 8):
+        recommendation = "buy_now"
+    elif current_price > target_price * 1.08 and trend == "falling":
+        recommendation = "wait"
+    else:
+        recommendation = "no_rush"
+
     return {
         "current_price": round(current_price, 2),
         "predicted_1m": round(predicted_1m, 2),
         "predicted_3m": round(predicted_3m, 2),
         "trend": trend,
         "recommendation": recommendation,
+        "target_price": round(target_price, 2),
+        "price_gap_pct": round(price_gap_pct, 2),
         "confidence": round(confidence, 3),
     }
 
@@ -139,6 +179,8 @@ def seed_predictions(db: Session) -> tuple[int, int]:
             existing.predicted_3m = prediction["predicted_3m"]
             existing.trend = prediction["trend"]
             existing.recommendation = prediction["recommendation"]
+            existing.target_price = prediction["target_price"]
+            existing.price_gap_pct = prediction["price_gap_pct"]
             existing.confidence = prediction["confidence"]
             existing.last_updated = datetime.utcnow()
         else:
